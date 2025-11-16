@@ -1,158 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anbarasan Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anbarasan K - Aspiring Data Scientist & ML Developer</title>
 
-  <style>
-    body { padding-top: 40px; }
-    main.container { padding: 2rem 0; }
-    .profile-img { width: 100%; border-radius: 12px; object-fit: cover; }
-    .skill-pill {
-      padding: 8px 14px;
-      background: #ececec;
-      border-radius: 20px;
-      margin: 4px;
-      display: inline-block;
-    }
-    footer.container { margin-top: 50px; padding: 20px 0; text-align: center; }
-  </style>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
 
-  <script>
-    function handleContact(event) {
-      event.preventDefault();
-      alert("Your message has been submitted!");
-    }
-  </script>
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height:1.6;
+            color:#333;
+            background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+            min-height:100vh;
+        }
+
+        .container{
+            max-width:1200px;
+            margin:0 auto;
+            padding:0 20px;
+        }
+
+        /* Header */
+        header{
+            background:rgba(255,255,255,0.95);
+            backdrop-filter:blur(10px);
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            z-index:1000;
+            box-shadow:0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:1rem 2rem;
+        }
+
+        .logo{
+            font-size:1.5rem;
+            font-weight:bold;
+            background:linear-gradient(45deg,#667eea,#764ba2);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .nav-links{
+            display:flex;
+            list-style:none;
+            gap:2rem;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:#333;
+            font-weight:500;
+            transition:0.3s;
+        }
+        .nav-links a:hover{
+            color:#667eea;
+        }
+
+        /* Hero */
+        .hero{
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            color:white;
+            padding:0 20px;
+        }
+        .hero h1{
+            font-size:3rem;
+            margin-bottom:1rem;
+        }
+
+        /* FIXED IMAGE SIZE */
+        .profile-img{
+            width:250px;
+            height:250px;
+            border-radius:50%;
+            object-fit:cover;
+            object-position:center;
+            display:block;
+            margin:0 auto;
+            border:5px solid white;
+            box-shadow:0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section{
+            padding:100px 0;
+            background:white;
+        }
+        .section-title{
+            text-align:center;
+            font-size:2.5rem;
+            margin-bottom:3rem;
+            background:linear-gradient(45deg,#667eea,#764ba2);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        /* About */
+        .about-container{
+            text-align:center;
+        }
+        .about-container p{
+            max-width:800px;
+            margin:20px auto;
+            font-size:1.1rem;
+            color:#555;
+        }
+
+        /* Skills */
+        .skills-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:2rem;
+        }
+        .skill-box{
+            background:#f8f9fa;
+            border-radius:12px;
+            padding:2rem;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
+        .skill-title{
+            font-size:1.3rem;
+            margin-bottom:20px;
+            font-weight:600;
+        }
+        .skill-tag{
+            background:#e5e7ff;
+            padding:8px 15px;
+            margin:5px;
+            display:inline-block;
+            border-radius:20px;
+            font-size:0.9rem;
+            color:#667eea;
+            font-weight:500;
+        }
+
+        /* Projects */
+        .project-card{
+            background:white;
+            padding:2rem;
+            border-radius:15px;
+            margin-bottom:2rem;
+            box-shadow:0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Contact */
+        #contact{
+            background:#fafafa;
+        }
+        .contact-info{
+            text-align:center;
+        }
+        .contact-info p{
+            margin:10px 0;
+        }
+        .resume-btn{
+            background:#667eea;
+            color:white;
+            padding:12px 25px;
+            border-radius:25px;
+            text-decoration:none;
+            font-weight:600;
+            display:inline-block;
+            margin-top:20px;
+        }
+        .resume-btn:hover{
+            background:#5567d5;
+        }
+
+        footer{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:2rem;
+            margin-top:50px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav class="container-fluid">
-  <ul>
-    <li><strong>Anbarasan Portfolio</strong></li>
-  </ul>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact" role="button">Contact</a></li>
-  </ul>
-</nav>
+<header>
+    <nav>
+        <div class="logo">AK</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-<!-- MAIN BODY -->
-<main class="container">
-  <div class="grid">
-    <section id="about">
-      <hgroup>
-        <h2>Anbarasan K</h2>
-        <h3>Data Science Student — VIT Chennai</h3>
-      </hgroup>
-
-      <p>
-        Passionate Data Science graduate student with strong skills in Python, SQL, visualization tools, 
-        and machine learning. Seeking opportunities where I can contribute to analytics, model development, 
-        and business intelligence initiatives.
-      </p>
-
-      <!-- IMAGE PLACEHOLDER (You will replace src="" with your image file) -->
-      <figure>
-        <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
-        <figcaption><a href="#" target="_blank">images/profile.jpg</a></figcaption>
-      </figure>
-
-      <h3>Key Skills</h3>
-      <p>
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">R</span>
-        <span class="skill-pill">Django</span>
-        <span class="skill-pill">HTML</span>
-        <span class="skill-pill">CSS</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">Pandas</span>
-        <span class="skill-pill">NumPy</span>
-        <span class="skill-pill">Scikit-Learn</span>
-        <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Tableau</span>
-      </p>
-
-      <h3>Education</h3>
-      <p>
-        <strong>MSc Data Science — VIT Chennai (2024–2026)</strong><br>
-        CGPA: 8.2/10  
-        <br><br>
-        <strong>B.Sc Computer Science with Data Analytics — PSG College (2021–2024)</strong><br>
-        CGPA: 8.3/10
-      </p>
-
-      <h3>Strengths</h3>
-      <p>
-        Problem Solving • Teamwork • Communication • Adaptability • Presentation • Leadership
-      </p>
-    </section>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="grid" id="projects" style="margin-top:3rem;">
-    <section>
-      <hgroup>
-        <h2>Projects</h2>
-        <h3>My Work & Contributions</h3>
-      </hgroup>
-
-      <p>Some of my academic and personal data science projects:</p>
-
-      <h3>Text to SQL (Chatbot)</h3>
-      <p>
-        A chatbot converting natural language into SQL queries.  
-        Tools: Python, ChatGPT API, Django, NLTK, spaCy, Pandas  
-        <a href="#" target="_blank">Repository (Add Link)</a>
-      </p>
-
-      <h3>Travel Recommendation System</h3>
-      <p>
-        Recommends tourist locations based on user preferences; includes hotel booking & attractions.  
-        Tools: Python, Django, HTML/CSS, JavaScript, ML Model  
-        <a href="#" target="_blank">Repository (Add Link)</a>
-      </p>
-
-      <h3>Heart Attack Risk Prediction</h3>
-      <p>
-        ML model predicting heart attack risk based on health data using classification algorithms.  
-        Tools: Python, Pandas, NumPy, Scikit-Learn, Visualization  
-        <a href="#" target="_blank">Repository (Add Link)</a>
-      </p>
-    </section>
-  </div>
-</main>
-
-<!-- CONTACT SECTION -->
-<section aria-label="Subscribe example" id="contact">
-  <div class="container">
-    <article>
-      <hgroup>
-        <h2>Contact Me</h2>
-        <h3>Let's Connect</h3>
-      </hgroup>
-
-      <form class="grid" onsubmit="handleContact(event)">
-        <input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required>
-        <button type="submit">Send</button>
-      </form>
-    </article>
-  </div>
+<!-- HERO -->
+<section id="home" class="hero">
+    <div>
+        <h1>Anbarasan K</h1>
+        <p style="font-size:1.3rem;margin-bottom:20px;">
+            Aspiring Data Scientist & ML Developer | Python Developer
+        </p>
+        <p style="max-width:650px;margin:0 auto;">
+            Passionate about Data Science, Machine Learning, and building intelligent applications using Python.
+        </p>
+    </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="container">
-  <small>
-    <a href="https://linkedin.com/in/anbarasan-k1310" target="_blank">LinkedIn</a> • 
-    <a href="https://github.com/anbarasank2003" target="_blank">GitHub</a>
-  </small>
+<!-- ABOUT -->
+<section id="about">
+    <div class="container about-container">
+        <h2 class="section-title">About Me</h2>
+
+        <!-- FIXED-SIZE PROFILE IMAGE -->
+        <img src="images/profile.jpg" class="profile-img" alt="Profile Image">
+
+        <p>
+            I am an aspiring Data Scientist & ML Developer currently pursuing MSc Data Science at VIT Chennai.
+            I enjoy working with data, machine learning models, and Python-based solutions that bring real-world impact.
+        </p>
+        <p>
+            My goal is to work in Data Science, ML Engineering, or Python-driven development roles where I can contribute 
+            to analytics, insights, prediction models, and automation.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-box">
+                <div class="skill-title">Programming</div>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-title">Machine Learning</div>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Scikit-Learn</span>
+                <span class="skill-tag">Model Training</span>
+                <span class="skill-tag">EDA</span>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-title">Tools & Databases</div>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Google Colab</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-card">
+            <h3>Text to SQL Chatbot</h3>
+            <p>Chatbot converting natural language to SQL queries using NLP + Python + Django.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Travel Recommendation System</h3>
+            <p>ML-powered destination recommendation platform using Python & Django.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Heart Attack Risk Prediction</h3>
+            <p>Machine learning model predicting heart attack risk using healthcare data.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-info">
+            <p><strong>Phone:</strong> +91 6374666588</p>
+            <p><strong>Email:</strong> <a href="mailto:anbarasank1310@gmail.com">anbarasank1310@gmail.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/anbarasasnk2003">github.com/anbarasasnk2003</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anbarasan-k1310">linkedin.com/in/anbarasan-k1310</a></p>
+
+            <a href="https://raw.githubusercontent.com/anbarasasnk2003/main/Anbarasan_K_RESUME.pdf" 
+               class="resume-btn" target="_blank">
+                Download Resume
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Anbarasan K — All Rights Reserved</p>
 </footer>
 
 </body>
