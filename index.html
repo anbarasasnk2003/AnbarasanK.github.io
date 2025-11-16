@@ -3,189 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anbarasan K - Aspiring Data Scientist & ML Developer</title>
+    <title>Anbarasan K – Aspiring Data Scientist & ML Developer</title>
 
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body{
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height:1.6;
-            color:#333;
-            background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-            min-height:100vh;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
-        .container{
-            max-width:1200px;
-            margin:0 auto;
-            padding:0 20px;
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
         }
 
-        /* Header */
-        header{
-            background:rgba(255,255,255,0.95);
-            backdrop-filter:blur(10px);
-            position:fixed;
-            top:0;
-            left:0;
-            right:0;
-            z-index:1000;
-            box-shadow:0 2px 20px rgba(0,0,0,0.1);
+        header {
+            background: rgba(255,255,255,0.95);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
         }
 
-        nav{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:1rem 2rem;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .logo{
-            font-size:1.5rem;
-            font-weight:bold;
-            background:linear-gradient(45deg,#667eea,#764ba2);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .nav-links{
-            display:flex;
-            list-style:none;
-            gap:2rem;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .nav-links a{
-            text-decoration:none;
-            color:#333;
-            font-weight:500;
-            transition:0.3s;
-        }
-        .nav-links a:hover{
-            color:#667eea;
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
         }
 
-        /* Hero */
-        .hero{
-            height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
-            color:white;
-            padding:0 20px;
-        }
-        .hero h1{
-            font-size:3rem;
-            margin-bottom:1rem;
+        .nav-links a:hover {
+            color: #667eea;
         }
 
-        /* FIXED IMAGE SIZE */
-        .profile-img{
-            width:250px;
-            height:250px;
-            border-radius:50%;
-            object-fit:cover;
-            object-position:center;
-            display:block;
-            margin:0 auto;
-            border:5px solid white;
-            box-shadow:0 5px 25px rgba(0,0,0,0.2);
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
         }
 
-        /* Sections */
-        section{
-            padding:100px 0;
-            background:white;
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { max-width: 600px; margin: auto; }
+
+        /* Section Style */
+        section {
+            padding: 110px 0;
+            background: #fff;
         }
-        .section-title{
-            text-align:center;
-            font-size:2.5rem;
-            margin-bottom:3rem;
-            background:linear-gradient(45deg,#667eea,#764ba2);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
+
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* About */
-        .about-container{
-            text-align:center;
-        }
-        .about-container p{
-            max-width:800px;
-            margin:20px auto;
-            font-size:1.1rem;
-            color:#555;
+        .profile-img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            display: block;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
         }
 
-        /* Skills */
-        .skills-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:2rem;
-        }
-        .skill-box{
-            background:#f8f9fa;
-            border-radius:12px;
-            padding:2rem;
-            text-align:center;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);
-        }
-        .skill-title{
-            font-size:1.3rem;
-            margin-bottom:20px;
-            font-weight:600;
-        }
-        .skill-tag{
-            background:#e5e7ff;
-            padding:8px 15px;
-            margin:5px;
-            display:inline-block;
-            border-radius:20px;
-            font-size:0.9rem;
-            color:#667eea;
-            font-weight:500;
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
         }
 
         /* Projects */
-        .project-card{
-            background:white;
-            padding:2rem;
-            border-radius:15px;
-            margin-bottom:2rem;
-            box-shadow:0 8px 30px rgba(0,0,0,0.1);
+        .project-card {
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #666;
+        }
+
+        .project-card a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Skills */
+        .skill-tag {
+            background: #e5e7ff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            color: #667eea;
+            font-size: 0.9rem;
         }
 
         /* Contact */
-        #contact{
-            background:#fafafa;
-        }
-        .contact-info{
-            text-align:center;
-        }
-        .contact-info p{
-            margin:10px 0;
-        }
-        .resume-btn{
-            background:#667eea;
-            color:white;
-            padding:12px 25px;
-            border-radius:25px;
-            text-decoration:none;
-            font-weight:600;
-            display:inline-block;
-            margin-top:20px;
-        }
-        .resume-btn:hover{
-            background:#5567d5;
+        #contact {
+            background: #f7f7f7;
         }
 
-        footer{
-            background:#333;
-            color:white;
-            text-align:center;
-            padding:2rem;
-            margin-top:50px;
+        .contact-info {
+            text-align: center;
+        }
+
+        .resume-btn {
+            background: #667eea;
+            padding: 12px 25px;
+            border-radius: 25px;
+            color: white;
+            display: inline-block;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -209,30 +197,29 @@
 <section id="home" class="hero">
     <div>
         <h1>Anbarasan K</h1>
-        <p style="font-size:1.3rem;margin-bottom:20px;">
+        <p style="font-size: 1.3rem; margin-bottom: 15px;">
             Aspiring Data Scientist & ML Developer | Python Developer
         </p>
-        <p style="max-width:650px;margin:0 auto;">
-            Passionate about Data Science, Machine Learning, and building intelligent applications using Python.
+        <p>
+            Passionate about building intelligent systems using Machine Learning, Python, and Data-driven solutions.
         </p>
     </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-    <div class="container about-container">
+    <div class="container">
         <h2 class="section-title">About Me</h2>
 
-        <!-- FIXED-SIZE PROFILE IMAGE -->
         <img src="images/profile.jpg" class="profile-img" alt="Profile Image">
 
-        <p>
-            I am an aspiring Data Scientist & ML Developer currently pursuing MSc Data Science at VIT Chennai.
-            I enjoy working with data, machine learning models, and Python-based solutions that bring real-world impact.
+        <p class="about-text">
+            I am currently pursuing MSc Data Science at VIT Chennai. I enjoy working with data, extracting insights, 
+            and creating ML-driven applications using Python.
         </p>
-        <p>
-            My goal is to work in Data Science, ML Engineering, or Python-driven development roles where I can contribute 
-            to analytics, insights, prediction models, and automation.
+
+        <p class="about-text">
+            My goal is to become a Data Scientist or Machine Learning Engineer, and also explore Python Development roles.
         </p>
     </div>
 </section>
@@ -242,34 +229,20 @@
     <div class="container">
         <h2 class="section-title">Skills</h2>
 
-        <div class="skills-grid">
-            <div class="skill-box">
-                <div class="skill-title">Programming</div>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">R</span>
-                <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">JavaScript</span>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-title">Machine Learning</div>
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Scikit-Learn</span>
-                <span class="skill-tag">Model Training</span>
-                <span class="skill-tag">EDA</span>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-title">Tools & Databases</div>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">Power BI</span>
-                <span class="skill-tag">Tableau</span>
-                <span class="skill-tag">Google Colab</span>
-                <span class="skill-tag">Git</span>
-            </div>
+        <div style="text-align:center;">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Scikit-Learn</span>
+            <span class="skill-tag">EDA</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Google Colab</span>
         </div>
     </div>
 </section>
@@ -281,17 +254,20 @@
 
         <div class="project-card">
             <h3>Text to SQL Chatbot</h3>
-            <p>Chatbot converting natural language to SQL queries using NLP + Python + Django.</p>
+            <p>Chatbot converting natural text into SQL queries using NLP and Python.</p>
+            <a href="https://github.com/anbarasasnk2003/texttosql" target="_blank">View project in github</a>
         </div>
 
         <div class="project-card">
             <h3>Travel Recommendation System</h3>
-            <p>ML-powered destination recommendation platform using Python & Django.</p>
+            <p>Recommend tourist places using ML + Django.</p>
+            <a href="https://github.com/anbarasasnk2003/travel-reccomendation-for-tamilnadu" target="_blank">View GitHub</a>
         </div>
 
         <div class="project-card">
             <h3>Heart Attack Risk Prediction</h3>
-            <p>Machine learning model predicting heart attack risk using healthcare data.</p>
+            <p>ML model predicting heart attack risk using patient data.</p>
+            <a href="https://github.com/anbarasasnk2003/heart-attack-risk-prediction" target="_blank">View GitHub</a>
         </div>
     </div>
 </section>
@@ -307,8 +283,7 @@
             <p><strong>GitHub:</strong> <a href="https://github.com/anbarasasnk2003">github.com/anbarasasnk2003</a></p>
             <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anbarasan-k1310">linkedin.com/in/anbarasan-k1310</a></p>
 
-            <a href="https://raw.githubusercontent.com/anbarasasnk2003/main/Anbarasan_K_RESUME.pdf" 
-               class="resume-btn" target="_blank">
+            <a class="resume-btn" href="https://raw.githubusercontent.com/anbarasasnk2003/main/Anbarasan_K_RESUME.pdf" target="_blank">
                 Download Resume
             </a>
         </div>
@@ -316,8 +291,27 @@
 </section>
 
 <footer>
-    <p>© 2025 Anbarasan K — All Rights Reserved</p>
+    © 2025 Anbarasan K — All Rights Reserved
 </footer>
+
+<script>
+// Dynamic Smooth Scrolling — FIXES WHITE SPACE ON MOBILE + LAPTOP
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === "#") return;
+
+        e.preventDefault();
+        const target = document.querySelector(href);
+        const header = document.querySelector("header");
+
+        const headerHeight = header.offsetHeight;
+        const offset = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+
+        window.scrollTo({ top: offset, behavior: "smooth" });
+    });
+});
+</script>
 
 </body>
 </html>
