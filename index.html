@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume Portfolio</title>
+  <title>Anbarasan Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 
   <style>
-    body {
-      padding-top: 40px;
-    }
-    main.container {
-      padding: 2rem 0;
-    }
-    .profile-img {
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-    }
+    body { padding-top: 40px; }
+    main.container { padding: 2rem 0; }
+    .profile-img { width: 100%; border-radius: 12px; object-fit: cover; }
     .skill-pill {
       padding: 8px 14px;
-      background: #e8e8e8;
+      background: #ececec;
       border-radius: 20px;
-      margin: 5px;
+      margin: 4px;
       display: inline-block;
     }
-    footer.container {
-      margin-top: 50px;
-      padding: 20px 0;
-      text-align: center;
-    }
+    footer.container { margin-top: 50px; padding: 20px 0; text-align: center; }
   </style>
 
   <script>
     function handleContact(event) {
       event.preventDefault();
-      alert("Thank you! I will get back to you soon.");
+      alert("Your message has been submitted!");
     }
   </script>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <nav class="container-fluid">
   <ul>
-    <li><strong>My Portfolio</strong></li>
+    <li><strong>Anbarasan Portfolio</strong></li>
   </ul>
   <ul>
     <li><a href="#about">About</a></li>
@@ -53,91 +42,116 @@
   </ul>
 </nav>
 
+<!-- MAIN BODY -->
 <main class="container">
   <div class="grid">
     <section id="about">
       <hgroup>
-        <h2>Anbarasan</h2>
-        <h3>Data Science Student • VIT Chennai</h3>
+        <h2>Anbarasan K</h2>
+        <h3>Data Science Student — VIT Chennai</h3>
       </hgroup>
 
       <p>
-        I specialize in data analysis, machine learning, business intelligence, and building insightful data-driven solutions.
-        I enjoy exploring patterns, building models, and presenting insights visually through dashboards and interactive tools.
+        Passionate Data Science graduate student with strong skills in Python, SQL, visualization tools, 
+        and machine learning. Seeking opportunities where I can contribute to analytics, model development, 
+        and business intelligence initiatives.
       </p>
 
+      <!-- IMAGE PLACEHOLDER (You will replace src="" with your image file) -->
       <figure>
-        <img class="profile-img" src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1000&q=80" alt="Profile">
-        <figcaption>
-          <a href="https://unsplash.com" target="_blank">Image Source: Unsplash</a>
-        </figcaption>
+        <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
+        <figcaption><a href="#" target="_blank">Your Image Source</a></figcaption>
       </figure>
 
-      <h3>Skills</h3>
+      <h3>Key Skills</h3>
       <p>
         <span class="skill-pill">Python</span>
-        <span class="skill-pill">Machine Learning</span>
         <span class="skill-pill">SQL</span>
+        <span class="skill-pill">R</span>
+        <span class="skill-pill">Django</span>
+        <span class="skill-pill">HTML</span>
+        <span class="skill-pill">CSS</span>
+        <span class="skill-pill">JavaScript</span>
         <span class="skill-pill">Pandas</span>
         <span class="skill-pill">NumPy</span>
+        <span class="skill-pill">Scikit-Learn</span>
         <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Data Visualization</span>
+        <span class="skill-pill">Tableau</span>
       </p>
 
-      <h3>Experience & Strengths</h3>
+      <h3>Education</h3>
       <p>
-        • Exploratory Data Analysis  
-        • Predictive Modeling  
-        • Dashboard Development  
-        • Statistical Inference  
-        • Data Storytelling  
-        • Feature Engineering  
+        <strong>MSc Data Science — VIT Chennai (2024–2026)</strong><br>
+        CGPA: 8.2/10  
+        <br><br>
+        <strong>B.Sc Computer Science with Data Analytics — PSG College (2021–2024)</strong><br>
+        CGPA: 8.3/10
+      </p>
+
+      <h3>Strengths</h3>
+      <p>
+        Problem Solving • Teamwork • Communication • Adaptability • Presentation • Leadership
       </p>
     </section>
   </div>
 
+  <!-- PROJECTS -->
   <div class="grid" id="projects" style="margin-top:3rem;">
     <section>
       <hgroup>
         <h2>Projects</h2>
-        <h3>Featured Work</h3>
+        <h3>My Work & Contributions</h3>
       </hgroup>
 
-      <p>Some of my top academic & personal data science projects:</p>
+      <p>Some of my academic and personal data science projects:</p>
 
-      <h3>📊 Student Performance Prediction</h3>
-      <p>Machine learning model predicting academic outcomes using demographic & lifestyle features.</p>
+      <h3>Text to SQL (Chatbot)</h3>
+      <p>
+        A chatbot converting natural language into SQL queries.  
+        Tools: Python, ChatGPT API, Django, NLTK, spaCy, Pandas  
+        <a href="#" target="_blank">Repository (Add Link)</a>
+      </p>
 
-      <h3>📈 Sales Forecasting Model</h3>
-      <p>Time-series forecasting using ARIMA & LSTM for multi-month retail prediction.</p>
+      <h3>Travel Recommendation System</h3>
+      <p>
+        Recommends tourist locations based on user preferences; includes hotel booking & attractions.  
+        Tools: Python, Django, HTML/CSS, JavaScript, ML Model  
+        <a href="#" target="_blank">Repository (Add Link)</a>
+      </p>
 
-      <h3>📉 Customer Churn Dashboard</h3>
-      <p>Power BI dashboard analyzing churn factors & retention strategies.</p>
+      <h3>Heart Attack Risk Prediction</h3>
+      <p>
+        ML model predicting heart attack risk based on health data using classification algorithms.  
+        Tools: Python, Pandas, NumPy, Scikit-Learn, Visualization  
+        <a href="#" target="_blank">Repository (Add Link)</a>
+      </p>
     </section>
   </div>
 </main>
 
+<!-- CONTACT SECTION -->
 <section aria-label="Subscribe example" id="contact">
   <div class="container">
     <article>
       <hgroup>
         <h2>Contact Me</h2>
-        <h3>Let’s work together</h3>
+        <h3>Let's Connect</h3>
       </hgroup>
 
       <form class="grid" onsubmit="handleContact(event)">
-        <input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Name" required />
-        <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Email" required />
-        <button type="submit">Send Message</button>
+        <input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required>
+        <button type="submit">Send</button>
       </form>
     </article>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="container">
   <small>
-    <a href="#">LinkedIn</a> • 
-    <a href="#">GitHub</a>
+    <a href="https://linkedin.com/in/anbarasan-k1310" target="_blank">LinkedIn</a> • 
+    <a href="https://github.com/anbarasank2003" target="_blank">GitHub</a>
   </small>
 </footer>
 
